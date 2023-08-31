@@ -1,0 +1,24 @@
+{
+  "name": "jsaptester",
+  "version": "0.0.1",
+  "description": "Creates producers and consumers to test queries and updates in a jsap file",
+  "main": "main.js",
+  "scripts": {
+    "api": "node ./build/main -api",
+    "start": "node ./build/main",
+    "build": "tsc",
+    "dev:build": "tsc -w",
+    "dev:run": "nodemon build/main -jsap './resources/criteria.jsap.json' -forceHost",
+    "dev:runOnce": "node build/main -jsap './resources/criteria.jsap.json' -forceHost",
+    "dev": "concurrently npm:dev:*",
+    "test": "jest"
+  },
+  "author": "Gregorio Monari",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "greglogs": "^1.0.2",
+    "pacfactory": "^0.1.4"
+  }
+}
